@@ -1,6 +1,13 @@
+
+
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:instagram_clone/resources/auth_methods.dart';
 import 'package:instagram_clone/utils/colors.dart';
+import 'package:instagram_clone/utils/utils.dart';
 import 'package:instagram_clone/widgets/text_field_input.dart';
 
 class SigninScreen extends StatefulWidget {
@@ -15,6 +22,8 @@ class _SigninScreenState extends State<SigninScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _bioController = TextEditingController();
+  Uint8List? _image;
+  bool _isLoading=false;
   @override
   Widget build(BuildContext context) {
     dispose() {
@@ -23,6 +32,13 @@ class _SigninScreenState extends State<SigninScreen> {
       _passwordController.dispose();
       _usernameController.dispose();
       _bioController.dispose();
+    }
+
+    selectImage() async {
+      Uint8List im = await pickImage(ImageSource.gallery);
+      setState(() {
+        _image = im;
+      });
     }
 
     return Scaffold(
@@ -47,16 +63,21 @@ class _SigninScreenState extends State<SigninScreen> {
             ),
             Stack(
               children: [
-                CircleAvatar(
-                  radius: 60,
-                  backgroundImage: NetworkImage(
-                      'https://i.pinimg.com/564x/6b/73/3a/6b733ac2d55e40544fbdce404d08b2bf.jpg'),
-                ),
+                _image == null
+                    ? CircleAvatar(
+                        radius: 60,
+                        backgroundImage: NetworkImage(
+                            'https://i.pinimg.com/564x/6b/73/3a/6b733ac2d55e40544fbdce404d08b2bf.jpg'))
+                    : CircleAvatar(
+                        radius: 60, backgroundImage: MemoryImage(_image!)),
                 Positioned(
                     bottom: -10,
                     left: 80,
                     child: IconButton(
-                        onPressed: () {}, icon: Icon(Icons.camera_alt)))
+                        onPressed: () {
+                          selectImage();
+                        },
+                        icon: Icon(Icons.camera_alt)))
               ],
             ),
             SizedBox(
@@ -94,9 +115,28 @@ class _SigninScreenState extends State<SigninScreen> {
               height: 24,
             ),
             InkWell(
-              onTap: () {},
-              child: Container(
-                child: Text('Log in'),
+              
+              onTap: () async {
+                setState(() {
+                  _isLoading=true;
+                });
+                var response = await AuthMethods().signUpUser(
+                    username: _usernameController.text,
+                    email: _emailController.text,
+                    password: _passwordController.text,
+                    bio: _bioController.text,
+                    file: _image
+                    );
+                print(response);
+                if (response!='success') {
+                  showSnackBar(response,context);
+                }
+                setState(() {
+                  _isLoading=false;
+                });
+              },
+              child:_isLoading?CircularProgressIndicator(): Container(
+                child: Text('Sign up'),
                 width: double.infinity,
                 alignment: Alignment.center,
                 padding: EdgeInsets.symmetric(vertical: 16),

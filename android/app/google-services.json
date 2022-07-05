@@ -1,21 +1,20 @@
 {
   "project_info": {
-    "project_number": "520177409679",
-    "firebase_url": "https://flutter-application-d6975-default-rtdb.firebaseio.com",
-    "project_id": "flutter-application-d6975",
-    "storage_bucket": "flutter-application-d6975.appspot.com"
+    "project_number": "345864525682",
+    "project_id": "instagram-clone-97a6d",
+    "storage_bucket": "instagram-clone-97a6d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:520177409679:android:d63a24ca0b090924ef9afa",
+        "mobilesdk_app_id": "1:345864525682:android:908c879eb8932a37b86feb",
         "android_client_info": {
           "package_name": "com.example.instagram_clone"
         }
       },
       "oauth_client": [
         {
-          "client_id": "520177409679-f7cj6rt61huta31g2q2fvloja240ckpr.apps.googleusercontent.com",
+          "client_id": "345864525682-42vrkrkug0ue1pacp5c6e94d8mvck3tc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.instagram_clone",
@@ -23,57 +22,20 @@
           }
         },
         {
-          "client_id": "520177409679-9ncbufpvhupqrmjjmrimubjj9j1d7bn9.apps.googleusercontent.com",
+          "client_id": "345864525682-drjbfph9kojugs3cf3ire89tticho3gr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCbOamkIuOM4IWvYxMEJkP7VpEl9xZMSmk"
+          "current_key": "AIzaSyAUT4khuaOXjVQyV-Rf6NVGQnxgOEW1K10"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "520177409679-9ncbufpvhupqrmjjmrimubjj9j1d7bn9.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:520177409679:android:8301656dd8b1b4d9ef9afa",
-        "android_client_info": {
-          "package_name": "com.example.restful"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "520177409679-ptd8piov7f4mc9omnvnas7k1qoppj8bp.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.restful",
-            "certificate_hash": "eced6b631653846384b69577bc2c9bb44e869bf0"
-          }
-        },
-        {
-          "client_id": "520177409679-9ncbufpvhupqrmjjmrimubjj9j1d7bn9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCbOamkIuOM4IWvYxMEJkP7VpEl9xZMSmk"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "520177409679-9ncbufpvhupqrmjjmrimubjj9j1d7bn9.apps.googleusercontent.com",
+              "client_id": "345864525682-drjbfph9kojugs3cf3ire89tticho3gr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
